@@ -16,9 +16,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    user: {
-      name: "Jane Doe",
-    },
+    roomName: "Jane Doe",
+    userImgUrl: "",
     chatData: {
       chats: [],
       isReaden: true,
@@ -28,9 +27,7 @@ export const Default: Story = {
 
 export const DefaultWithChat: Story = {
   args: {
-    user: {
-      ...Default.args.user,
-    },
+    roomName: Default.args.roomName,
     chatData: {
       chats: [{ send: "someone", message: "Hey, How's it going?" }],
       isReaden: false,
@@ -40,29 +37,25 @@ export const DefaultWithChat: Story = {
 
 export const Profile: Story = {
   args: {
-    user: {
-      ...Default.args.user,
-      userImgUrl:
-        "https://phinf.pstatic.net/contact/20230731_288/1690761539665PWs9O_JPEG/image.jpg?type=s160",
-    },
+    roomName: Default.args.roomName,
+    userImgUrl:
+      "https://phinf.pstatic.net/contact/20230731_288/1690761539665PWs9O_JPEG/image.jpg?type=s160",
     chatData: { chats: [], isReaden: true },
   },
 };
 
 export const ProfileWithChat: Story = {
   args: {
-    user: {
-      ...Profile.args.user,
-    },
+    roomName: Default.args.roomName,
+    userImgUrl: Profile.args.userImgUrl,
     chatData: { ...DefaultWithChat.args.chatData },
   },
 };
 
 export const DefaultWithLongChat: Story = {
   args: {
-    user: {
-      ...Default.args.user,
-    },
+    roomName: Default.args.roomName,
+    userImgUrl: Default.args.userImgUrl,
     chatData: {
       chats: [
         {

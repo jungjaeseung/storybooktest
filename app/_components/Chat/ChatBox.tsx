@@ -1,10 +1,10 @@
 import Image from "next/image";
 import UserPlaceholder from "../../../public/user-circle.svg";
-import { User } from "@/app/_types/UserType";
 import { Chat } from "@/app/_types/ChatType";
 
 interface ChatRoomProps {
-  user: User;
+  roomName: string;
+  userImgUrl?: string;
   chatData: {
     chats: Chat[];
     isReaden: boolean;
@@ -12,7 +12,8 @@ interface ChatRoomProps {
 }
 
 const ChatBox: React.FC<ChatRoomProps> = ({
-  user: { name, userImgUrl },
+  roomName,
+  userImgUrl,
   chatData: { chats, isReaden },
 }) => {
   const userPhoto = userImgUrl || UserPlaceholder;
@@ -35,7 +36,7 @@ const ChatBox: React.FC<ChatRoomProps> = ({
       </div>
       <div className="ml-2 flex flex-col items-start justify-center">
         <div>
-          <h3 className="font-semibold">{name}</h3>
+          <h3 className="font-semibold">{roomName}</h3>
         </div>
         <div className="h-[20px]">
           <p className="text-sm text-gray-500 dark:text-gray-400 max-w-[14rem] whitespace-nowrap text-ellipsis overflow-hidden">

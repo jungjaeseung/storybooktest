@@ -3,3 +3,8 @@ export interface Chat {
   message: string;
   //   date: Date;
 }
+
+export interface ChatInfo {
+  roomName: string;
+  isReaden: boolean;
+}
