@@ -8,7 +8,7 @@ interface MyMessageBoxProps {
 const MyMessageBox: React.FC<MyMessageBoxProps> = ({ chat: { message } }) => {
   return (
     <div className="flex justify-end items-end space-x-2">
-      <div className="bg-gray-300 text-black rounded-lg px-4 py-2 max-w-xs">
+      <div className="bg-gray-300 text-black rounded-lg px-6 py-2 max-w-xs">
         <p>{message}</p>
       </div>
     </div>

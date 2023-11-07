@@ -22,6 +22,7 @@ const ChatContainer: React.FC<ChatProps> = ({ chatData, chatInfo }) => {
                   chats: chatData,
                   isReaden: chatInfo[index].isReaden,
                 }}
+                key={index}
               />
             ))}
         </div>
